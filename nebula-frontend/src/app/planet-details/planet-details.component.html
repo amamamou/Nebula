@@ -1,0 +1,24 @@
+<div class="bg-video-container">
+  <video class="bg-video" autoplay muted loop>
+    <source src="assets/4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<section class="planets-header">
+  <h1 class="planets-title">{{ planet?.englishName }}</h1>
+</section>
+
+<section class="planet-details-container">
+  <div class="planet-details-card">
+    <h2>Planet Details</h2>
+    <p><strong>Name:</strong> {{ planet?.englishName }}</p>
+    <p><strong>Mass:</strong> {{ planet?.mass?.massValue }} × 10<sup>{{ planet?.mass?.massExponent }}</sup> kg</p>
+    <p><strong>Gravity:</strong> {{ planet?.gravity }} m/s²</p>
+    <p><strong>Radius:</strong> {{ planet?.meanRadius }} km</p>
+    <p><strong>Moons:</strong> {{ planet?.moons?.length || 'None' }}</p>
+  </div>
+  <div class="planet-image">
+    <img [src]="'assets/planetsdetails/' + planet?.englishName + '.png'" [alt]="planet?.englishName" />
+  </div>
+</section>

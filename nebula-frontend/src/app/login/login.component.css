@@ -1,0 +1,106 @@
+/* Full background video */
+.bg-video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1; /* Push it behind other content */
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire screen */
+}
+
+/* Login section styling */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height */
+  position: relative;
+  z-index: 1;
+}
+
+.login-form {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  padding: 30px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.login-form h2 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4285F4; /* Google blue */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #357AE8;
+}
+
+/* Social login buttons */
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.social-login button {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-login button img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.social-login .google {
+  background-color: #db4437; /* Google red */
+  color: white;
+}
+
+.social-login .facebook {
+  background-color: #3b5998; /* Facebook blue */
+  color: white;
+}
+
+.social-login .linkedin {
+  background-color: #1da1f2; /* Linkedin blue */
+  color: white;
+}
+
+.social-login button:hover {
+  opacity: 0.8;
+}
