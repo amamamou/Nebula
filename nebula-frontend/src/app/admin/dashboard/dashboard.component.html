@@ -1,1 +1,104 @@
-<p>dashboard works!</p>
+<!-- dashboard.component.html -->
+<div class="video-container">
+  <video autoplay muted loop class="background-video">
+    <source src="assets/4.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="sidebar-container">
+    <nav class="sidebar-nav" role="navigation">
+      <div class="profile-section">
+        <div
+          class="profile-avatar"
+          role="img"
+          aria-label="Profile picture"
+          style="background-image: url('assets/admin/pfp.jpg')"
+        ></div>
+        <h2 class="profile-name">Samantha</h2>
+        <p class="profile-email">samantha@email.com</p>
+      </div>
+
+      <ul class="nav-list">
+        <li>
+          <a
+            [routerLink]="'/admin/dashboard/home'"
+            class="nav-item"
+            [ngStyle]="{
+              color: currentRoute === '/admin/dashboard/home' ? '#FFFFFF' : '#808080'
+            }"
+            tabindex="0"
+          >
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="'/admin/dashboard/planets'"
+            class="nav-item"
+            [ngStyle]="{
+              color: currentRoute === '/admin/dashboard/planets' ? '#FFFFFF' : '#808080'
+            }"
+            tabindex="0"
+          >
+            Planets
+          </a>
+        </li>
+        <!-- Added Astronaut section under Planets -->
+        <li>
+          <a
+            [routerLink]="'/admin/dashboard/astronauts'"
+            class="nav-item"
+            [ngStyle]="{
+              color: currentRoute === '/admin/dashboard/astronauts' ? '#FFFFFF' : '#808080'
+            }"
+            tabindex="0"
+          >
+            Astronauts
+          </a>
+        </li>
+        <!-- Add additional sidebar links here -->
+        <li>
+          <a
+            [routerLink]="'/admin/dashboard/settings'"
+            class="nav-item"
+            [ngStyle]="{
+              color: currentRoute === '/admin/dashboard/settings' ? '#FFFFFF' : '#808080'
+            }"
+            tabindex="0"
+          >
+            Settings
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="'/admin/dashboard/notifications'"
+            class="nav-item"
+            [ngStyle]="{
+              color: currentRoute === '/admin/dashboard/notifications' ? '#FFFFFF' : '#808080'
+            }"
+            tabindex="0"
+          >
+            Notifications
+          </a>
+        </li>
+        <li>
+          <a
+            [routerLink]="'/admin/dashboard/logout'"
+            class="nav-item"
+            [ngStyle]="{
+              color: currentRoute === '/admin/dashboard/logout' ? '#FFFFFF' : '#808080'
+            }"
+            tabindex="0"
+          >
+            Logout
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Content container for dynamic components -->
+  <div class="content-container">
+    <router-outlet></router-outlet> <!-- This will render the active route's component -->
+  </div>
+</div>

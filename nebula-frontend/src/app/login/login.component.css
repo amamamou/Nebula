@@ -1,3 +1,8 @@
+/* Apply Poppins font to all text */
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
 /* Full background video */
 .bg-video-container {
   position: fixed;

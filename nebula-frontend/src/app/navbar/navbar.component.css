@@ -5,6 +5,9 @@ body {
   overflow-x: hidden; /* Prevent horizontal scrolling */
   font-family: 'Great Vibes', cursive; /* Elegant script for decorative purposes */
 }
+* {
+  font-family: 'Poppins', sans-serif;
+}
 
 /* Navbar container */
 .navbar {

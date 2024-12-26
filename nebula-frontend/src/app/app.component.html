@@ -1,2 +1,5 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf="showNavbar"></app-navbar>
+
+<!-- Conditionally show the DashboardComponent if the URL starts with '/admin' -->
+
 <router-outlet></router-outlet>

@@ -5,18 +5,30 @@ import { PlanetsComponent } from './planets/planets.component';
 import { PlanetDetailsComponent } from './planet-details/planet-details.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { AplanetsComponent } from './admin/aplanets/aplanets.component';
+import { AstronautComponent } from './admin/astronaut/astronaut.component';
+import { AhomeComponent } from './admin/ahome/ahome.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent }, // Default route
-  { path: 'planets', component: PlanetsComponent },
-  { path: 'planet/:id', component: PlanetDetailsComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'admin/dashboard', component: DashboardComponent }, // Default route for admin section
+  { path: '', component: HomeComponent }, // Default route for home
+  { path: 'planets', component: PlanetsComponent }, // Public planets page
+  { path: 'planet/:id', component: PlanetDetailsComponent }, // Planet details page
+  { path: 'login', component: LoginComponent }, // Login page
 
+  // Admin routes
+  {
+    path: 'admin/dashboard',
+    component: DashboardComponent,
+    children: [
+      { path: 'planets', component: AplanetsComponent }, // Admin planets management
+      { path: 'astronauts', component: AstronautComponent }, // Admin planets management
+      { path: 'home', component: AhomeComponent }, // Admin planets management
 
-
-
-
+      // Add more admin routes here as needed
+    ]
+  },
+  // Redirect to dashboard if no other path matches
+  { path: '**', redirectTo: '/admin/dashboard' }
 ];
 
 @NgModule({

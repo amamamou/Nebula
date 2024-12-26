@@ -1,0 +1,60 @@
+<div class="astronauts-container">
+  <h2>Manage Astronauts</h2>
+
+  <!-- Add Astronaut Title -->
+  <p class="section-title">Add an Astronaut</p>
+
+  <!-- Add Astronaut Section -->
+  <div class="add-astronaut-section">
+    <form class="add-astronaut-form">
+      <div class="form-group">
+        <label for="astronautName">Astronaut Name</label>
+        <input type="text" id="astronautName" name="astronautName" placeholder="Enter astronaut name" required>
+      </div>
+      <div class="form-group">
+        <label for="astronautDescription">Description</label>
+        <textarea id="astronautDescription" name="astronautDescription" placeholder="Enter astronaut description" required></textarea>
+      </div>
+      <button class="add-astronaut-btn">
+        <img src="assets/icons/Add.png" alt="Add Astronaut" width="20" height="20">
+        Add Astronaut
+      </button>
+    </form>
+  </div>
+
+  <!-- Astronauts Title -->
+  <p class="section-title">Astronauts All</p>
+
+  <!-- Astronauts Table -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><span>#</span></th>
+        <th><span>Astronaut Name</span></th>
+        <th><span>Description</span></th>
+        <th><span>Actions</span></th> <!-- New column for actions -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let astronaut of astronauts; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ astronaut.name }}</td>
+        <td>{{ astronaut.description }}</td>
+        <td>
+          <!-- View button (Consult) -->
+          <button class="action-btn">
+            <img src="assets/icons/Eye.png" alt="View" width="20" height="20">
+          </button>
+          <!-- Update button -->
+          <button class="action-btn">
+            <img src="assets/icons/Update.png" alt="Update" width="20" height="20">
+          </button>
+          <!-- Delete button -->
+          <button class="action-btn">
+            <img src="assets/icons/Delete.png" alt="Delete" width="20" height="20">
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

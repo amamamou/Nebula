@@ -27,4 +27,9 @@ public class PlanetRestController {
     public String getPlanetDetails(@PathVariable String planetId) {
         return planetService.getPlanetDetails(planetId);
     }
+    // Endpoint to get moons of a specific planet by its englishName
+    @GetMapping("/api/planets/{planetName}/moons")
+    public String getMoonsOfPlanet(@PathVariable String planetName) {
+        return planetService.getMoonsOfPlanet(planetName);
+    }
 }

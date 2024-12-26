@@ -37,4 +37,15 @@ public class PlanetService {
 
         return restTemplate.getForObject(url, String.class);
     }
+
+    // Method to get moons of a specific planet by its englishName
+    public String getMoonsOfPlanet(String planetName) {
+        String url = UriComponentsBuilder.fromHttpUrl(nasaApiUrl)
+                .pathSegment("bodies")
+                .queryParam("filter[]", "moons,eq,true")
+                .queryParam("filter[]", "englishName,eq," + planetName) // Filter by englishName
+                .toUriString();
+
+        return restTemplate.getForObject(url, String.class);
+    }
 }

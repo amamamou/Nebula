@@ -1,0 +1,118 @@
+/* Video container to position the video as background */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+/* Video element styling */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Place the video behind the content */
+}
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px; /* Space between sidebar and content container */
+}
+
+.sidebar-nav {
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #fff;
+  font: 600 25px/1.4 Poppins, sans-serif;
+  z-index: 1;
+  position: relative;
+}
+
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.profile-avatar {
+  width: 86px;
+  height: 87px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.profile-name {
+  font-size: 30px;
+  line-height: 1;
+  margin: 20px 0 0;
+}
+
+.profile-email {
+  color: #808080;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 2;
+  margin: 5px 0 0;
+  width: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0 0;
+  width: 100%;
+}
+
+.nav-item {
+  display: block;
+  margin: 30px 0 0;
+  color: #808080;
+  text-decoration: none;
+  background-blend-mode: normal;
+}
+
+.nav-item.active {
+  color: #fff;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+  outline: none;
+  color: #fff;
+}
+
+/* Content container next to the sidebar */
+.content-container {
+  flex-grow: 1;
+  background-color: #ffffff;
+  border-radius: 30px;
+  height: 100%; /* Allow it to grow and fill the remaining space */
+  margin-top: 10px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: calc(100vh - 20px); /* Adjust height to allow scrolling */
+}
+
+@media (max-width: 991px) {
+  .sidebar-nav {
+    margin-top: 40px;
+  }
+
+  .nav-list {
+    margin-top: 40px;
+  }
+}
