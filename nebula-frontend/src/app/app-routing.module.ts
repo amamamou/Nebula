@@ -8,6 +8,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AplanetsComponent } from './admin/aplanets/aplanets.component';
 import { AstronautComponent } from './admin/astronaut/astronaut.component';
 import { AhomeComponent } from './admin/ahome/ahome.component';
+import { AmoonComponent } from './admin/amoon/amoon.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Default route for home
@@ -21,6 +22,7 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: 'planets', component: AplanetsComponent }, // Admin planets management
+      { path: 'moons', component: AmoonComponent }, // Admin planets management
       { path: 'astronauts', component: AstronautComponent }, // Admin planets management
       { path: 'home', component: AhomeComponent }, // Admin planets management
 

@@ -1,0 +1,75 @@
+<div class="moons-container">
+  <h2>Manage Moons</h2>
+
+  <!-- Add/Update Moon Title -->
+  <p class="section-title">{{ newMoon.id ? 'Update Moon' : 'Add a Moon' }}</p>
+
+  <!-- Add/Update Moon Section -->
+  <div class="add-moon-section">
+    <form class="add-moon-form" (ngSubmit)="newMoon.id ? updateMoon() : addMoon()">
+      <div class="form-group">
+        <label for="moonName">Moon Name</label>
+        <input type="text" id="moonName" name="moonName" [(ngModel)]="newMoon.name" placeholder="Enter moon name" required>
+      </div>
+      <div class="form-group">
+        <label for="moonDiameter">Diameter (in km)</label>
+        <input type="number" id="moonDiameter" name="moonDiameter" [(ngModel)]="newMoon.diameter" placeholder="Enter moon diameter" required>
+      </div>
+      <div class="form-group">
+        <label for="moonHasRings">Has Rings</label>
+        <select id="moonHasRings" name="moonHasRings" [(ngModel)]="newMoon.hasRings" required>
+          <option [ngValue]="true">Yes</option>
+          <option [ngValue]="false">No</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="planetId">Planet</label>
+        <input type="number" id="planetId" name="planetId" [(ngModel)]="newMoon.planetId" placeholder="Enter planet ID" required>
+      </div>
+      <button class="add-moon-btn" type="submit">
+        <img src="assets/icons/{{ newMoon.id ? 'Update' : 'Add' }}.png" alt="{{ newMoon.id ? 'Update Moon' : 'Add Moon' }}" width="20" height="20">
+        {{ newMoon.id ? 'Update Moon' : 'Add Moon' }}
+      </button>
+    </form>
+  </div>
+
+  <!-- Moons Title -->
+  <p class="section-title">Moons All</p>
+
+  <!-- Moons Table -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><span>#</span></th>
+        <th><span>Moon Name</span></th>
+        <th><span>Diameter (km)</span></th>
+        <th><span>Has Rings</span></th>
+        <th><span>Planet ID</span></th>
+        <th><span>Actions</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let moon of moons; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ moon.name }}</td>
+        <td>{{ moon.diameter }}</td>
+        <td>{{ moon.hasRings ? 'Yes' : 'No' }}</td>
+        <td>{{ moon.planetId }}</td>
+        <td>
+          <!-- View button (Consult) -->
+          <button class="action-btn" (click)="viewMoon(moon)">
+            <img src="assets/icons/Eye.png" alt="View" width="20" height="20">
+          </button>
+          <!-- Update button -->
+          <button class="action-btn" (click)="openUpdateForm(moon)">
+            <img src="assets/icons/Update.png" alt="Update" width="20" height="20">
+          </button>
+          <!-- Delete button -->
+          <button class="action-btn" (click)="deleteMoon(moon.id ?? 0)">
+            <img src="assets/icons/Delete.png" alt="Delete" width="20" height="20">
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

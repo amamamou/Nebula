@@ -1,4 +1,4 @@
-package com.example.nebula.web;
+package com.example.nebula.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

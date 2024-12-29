@@ -15,6 +15,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AplanetsComponent } from './admin/aplanets/aplanets.component';
 import { AstronautComponent } from './admin/astronaut/astronaut.component';
 import { AhomeComponent } from './admin/ahome/ahome.component';
+import { AmoonComponent } from './admin/amoon/amoon.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AhomeComponent } from './admin/ahome/ahome.component';
     AplanetsComponent,
     AstronautComponent,
     AhomeComponent,
+    AmoonComponent,
   ],
   imports: [
     BrowserModule,

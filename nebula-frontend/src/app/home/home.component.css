@@ -97,6 +97,7 @@ body {
 
 /* OR Line Container */
 .or-container {
+  font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,6 +112,7 @@ body {
 }
 
 .or-text {
+  font-family: 'Poppins', sans-serif;
   font-size: 18px;
   color: white; /* White color for the OR text */
   font-weight: bold;
@@ -118,6 +120,7 @@ body {
 
 /* Button styling */
 .cta-btn {
+  font-family: 'Poppins', sans-serif;
   background-color: transparent;
   border: 2px solid white; /* Pink border */
   color: white; /* White color for the button text */
@@ -140,6 +143,7 @@ body {
     font-size: 50px;
   }
   .title-small {
+    font-family: 'Poppins', sans-serif;
     font-size: 14px;
   }
   .search-bar {

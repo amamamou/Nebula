@@ -1,23 +1,23 @@
 <div class="astronauts-container">
   <h2>Manage Astronauts</h2>
 
-  <!-- Add Astronaut Title -->
-  <p class="section-title">Add an Astronaut</p>
+  <!-- Add / Update Astronaut Title -->
+  <p class="section-title">{{ selectedAstronaut ? 'Update Astronaut' : 'Add an Astronaut' }}</p>
 
-  <!-- Add Astronaut Section -->
+  <!-- Add / Update Astronaut Section -->
   <div class="add-astronaut-section">
-    <form class="add-astronaut-form">
+    <form class="add-astronaut-form" (ngSubmit)="selectedAstronaut ? updateAstronaut() : addAstronaut()">
       <div class="form-group">
         <label for="astronautName">Astronaut Name</label>
-        <input type="text" id="astronautName" name="astronautName" placeholder="Enter astronaut name" required>
+        <input type="text" id="astronautName" [(ngModel)]="astronautForm.name" name="astronautName" placeholder="Enter astronaut name" required>
       </div>
       <div class="form-group">
-        <label for="astronautDescription">Description</label>
-        <textarea id="astronautDescription" name="astronautDescription" placeholder="Enter astronaut description" required></textarea>
+        <label for="astronautMission">Mission</label>
+        <input type="text" id="astronautMission" [(ngModel)]="astronautForm.mission" name="astronautMission" placeholder="Enter astronaut mission" required>
       </div>
-      <button class="add-astronaut-btn">
-        <img src="assets/icons/Add.png" alt="Add Astronaut" width="20" height="20">
-        Add Astronaut
+      <button class="add-astronaut-btn" type="submit">
+        <img src="assets/icons/{{ selectedAstronaut ? 'Update' : 'Add' }}.png" alt="{{ selectedAstronaut ? 'Update' : 'Add' }} Astronaut" width="20" height="20">
+        {{ selectedAstronaut ? 'Update' : 'Add' }} Astronaut
       </button>
     </form>
   </div>
@@ -31,7 +31,7 @@
       <tr>
         <th><span>#</span></th>
         <th><span>Astronaut Name</span></th>
-        <th><span>Description</span></th>
+        <th><span>Mission</span></th>
         <th><span>Actions</span></th> <!-- New column for actions -->
       </tr>
     </thead>
@@ -39,18 +39,18 @@
       <tr *ngFor="let astronaut of astronauts; let i = index">
         <td>{{ i + 1 }}</td>
         <td>{{ astronaut.name }}</td>
-        <td>{{ astronaut.description }}</td>
+        <td>{{ astronaut.mission }}</td>
         <td>
           <!-- View button (Consult) -->
-          <button class="action-btn">
+          <button class="action-btn" (click)="viewAstronaut(astronaut.id)">
             <img src="assets/icons/Eye.png" alt="View" width="20" height="20">
           </button>
           <!-- Update button -->
-          <button class="action-btn">
+          <button class="action-btn" (click)="viewAstronaut(astronaut.id)">
             <img src="assets/icons/Update.png" alt="Update" width="20" height="20">
           </button>
           <!-- Delete button -->
-          <button class="action-btn">
+          <button class="action-btn" (click)="deleteAstronaut(astronaut.id)">
             <img src="assets/icons/Delete.png" alt="Delete" width="20" height="20">
           </button>
         </td>

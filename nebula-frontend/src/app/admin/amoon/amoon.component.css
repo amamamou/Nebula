@@ -1,9 +1,9 @@
-/* planets.component.css */
+/* moons.component.css */
 
 /* General body font */
 
 /* Container for the content */
-.planets-container {
+.moons-container {
   padding: 20px;
   background-color: #ffffff;
   margin-top: 20px;
@@ -13,7 +13,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Avenir+Next:wght@400;600&display=swap');
 
 /* Heading style */
-.planets-container h2 {
+.moons-container h2 {
   font-family: 'Avenir Next', sans-serif;
   font-size: 24px;
   font-weight: 600;
@@ -51,7 +51,7 @@ table td {
 /* Table header with black background */
 table th {
   font-family: 'Poppins', sans-serif;
-  background-color: #f9f9f9; /* Black background for header */
+  background-color: #f9f9f9;
   color: #262A41;
   font-size: 16px;
   overflow: hidden;
@@ -91,8 +91,8 @@ button i {
   font-size: 18px;
 }
 
-/* Add Planet Section */
-.add-planet-section {
+/* Add Moon Section */
+.add-moon-section {
   font-family: 'Poppins', sans-serif;
   background-color: #f9f9f9;
   padding: 20px;
@@ -101,7 +101,7 @@ button i {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.add-planet-section h3 {
+.add-moon-section h3 {
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
   font-weight: 600;
@@ -109,23 +109,24 @@ button i {
   margin-bottom: 15px;
 }
 
-.add-planet-form {
+.add-moon-form {
   display: flex;
   flex-direction: column;
 }
 
-.add-planet-form .form-group {
+.add-moon-form .form-group {
   margin-bottom: 15px;
 }
 
-.add-planet-form label {
+.add-moon-form label {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   color: #333;
 }
 
-.add-planet-form input,
-.add-planet-form textarea {
+.add-moon-form input,
+.add-moon-form textarea,
+.add-moon-form select {
   padding: 10px;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -133,11 +134,11 @@ button i {
   width: 100%;
 }
 
-.add-planet-form textarea {
+.add-moon-form textarea {
   resize: vertical;
 }
 
-.add-planet-btn {
+.add-moon-btn {
   background-color: #ffffff;
   color: #101010;
   border: none;
@@ -149,24 +150,10 @@ button i {
   align-items: center;
 }
 
-.add-planet-btn img {
+.add-moon-btn img {
   margin-right: 8px;
 }
 
-.add-planet-btn:hover {
+.add-moon-btn:hover {
   background-color: #365f9e;
-}
-/* Container for the planet images next to the title */
-
-.planet-images {
-  display: flex; /* Align images in a row */
-  gap:0px; /* Space between the images */
-  margin-left: 950px; /* Adds space between the title and the images */
-}
-
-.planet-image {
-  width: 20px; /* Very small size */
-  height: 20px; /* Very small size */
-  object-fit: cover; /* Ensures images are not distorted */
-  border-radius: 50%; /* Optional: makes the images round */
 }

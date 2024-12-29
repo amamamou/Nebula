@@ -1,55 +1,59 @@
 <div class="planets-container">
-  <h2>Manage Planets</h2>
-  <!-- Add Planet Title -->
-  <p class="section-title">Add a Planet</p>
+  <h2 class="manage-planets-title">
+    Manage Planets
+  </h2>
 
-  <!-- Add Planet Section -->
+  <p class="section-title">{{ editingPlanet ? 'Update Planet' : 'Add a Planet' }}</p>
+
   <div class="add-planet-section">
-    <form class="add-planet-form">
+    <form class="add-planet-form" (ngSubmit)="savePlanet()">
       <div class="form-group">
         <label for="planetName">Planet Name</label>
-        <input type="text" id="planetName" name="planetName" placeholder="Enter planet name" required>
+        <input type="text" id="planetName" name="planetName" [(ngModel)]="newPlanet.name" placeholder="Enter planet name" required>
       </div>
       <div class="form-group">
-        <label for="planetDescription">Description</label>
-        <textarea id="planetDescription" name="planetDescription" placeholder="Enter planet description" required></textarea>
+        <label for="planetMass">Mass</label>
+        <input type="number" id="planetMass" name="planetMass" [(ngModel)]="newPlanet.mass" placeholder="Enter planet mass" required>
       </div>
-      <button class="add-planet-btn">
-        <img src="assets/icons/Add.png" alt="Add Planet" width="20" height="20">
-        Add Planet
+      <div class="form-group">
+        <label for="planetType">Planet Type</label>
+        <select id="planetType" name="planetType" [(ngModel)]="newPlanet.type" required>
+          <option value="TERRESTRIAL">Terrestrial</option>
+          <option value="GAS_GIANT">Gas Giant</option>
+          <option value="ICE_GIANT">Ice Giant</option>
+          <option value="DWARF_PLANET">Dwarf Planet</option>
+        </select>
+      </div>
+      <button class="add-planet-btn" type="submit">
+        <img src="assets/icons/{{ editingPlanet ? 'Update' : 'Add' }}.png" alt="{{ editingPlanet ? 'Update' : 'Add' }} Planet" width="20" height="20">
+        {{ editingPlanet ? 'Update Planet' : 'Add Planet' }}
       </button>
     </form>
+
   </div>
 
-  <!-- Planets Title -->
-  <p class="section-title">Planets All</p>
-
-  <!-- Planets Table -->
+  <p class="section-title">All Planets</p>
   <table class="table table-bordered">
     <thead>
       <tr>
         <th><span>#</span></th>
         <th><span>Planet Name</span></th>
-        <th><span>Description</span></th>
-        <th><span>Actions</span></th> <!-- New column for actions -->
+        <th><span>Mass</span></th>
+        <th><span>Type</span></th>
+        <th><span>Actions</span></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let planet of planets; let i = index">
         <td>{{ i + 1 }}</td>
         <td>{{ planet.name }}</td>
-        <td>{{ planet.description }}</td>
+        <td>{{ planet.mass }}</td>
+        <td>{{ planet.type }}</td>
         <td>
-          <!-- View button (Consult) -->
-          <button class="action-btn">
-            <img src="assets/icons/Eye.png" alt="View" width="20" height="20">
-          </button>
-          <!-- Update button -->
-          <button class="action-btn">
+          <button class="action-btn" (click)="editPlanet(planet)">
             <img src="assets/icons/Update.png" alt="Update" width="20" height="20">
           </button>
-          <!-- Delete button -->
-          <button class="action-btn">
+          <button class="action-btn" (click)="deletePlanet(planet.id)">
             <img src="assets/icons/Delete.png" alt="Delete" width="20" height="20">
           </button>
         </td>

@@ -1,5 +1,6 @@
 package com.example.nebula.web;
 
+import com.example.nebula.service.PlanetService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
