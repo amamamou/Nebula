@@ -9,12 +9,14 @@ import { AplanetsComponent } from './admin/aplanets/aplanets.component';
 import { AstronautComponent } from './admin/astronaut/astronaut.component';
 import { AhomeComponent } from './admin/ahome/ahome.component';
 import { AmoonComponent } from './admin/amoon/amoon.component';
+import { StargazeComponent } from './stargaze/stargaze.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Default route for home
   { path: 'planets', component: PlanetsComponent }, // Public planets page
   { path: 'planet/:id', component: PlanetDetailsComponent }, // Planet details page
   { path: 'login', component: LoginComponent }, // Login page
+  { path: 'stargaze', component: StargazeComponent }, // Login page
 
   // Admin routes
   {

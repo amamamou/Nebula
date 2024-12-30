@@ -1,0 +1,94 @@
+/* Importing Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/* Overall container */
+.stargaze-container {
+  display: flex;
+  height: 100vh; /* Full height of the viewport */
+}
+
+/* Left Section with Text Information */
+.stargaze-left {
+  flex: 1; /* Takes up half of the container */
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  color: black; /* Text color */
+  background-color: white; /* White background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px; /* Rounded corners for a more polished look */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Style for the Stargaze header section */
+.stargaze-header {
+  position: relative; /* Positioning for overlaying content */
+  height: 30vh; /* 30% of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden; /* Ensures the video doesn’t spill out */
+}
+
+/* Background video styling */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Ensure the video covers the width */
+  height: 100%; /* Ensure the video covers the height */
+  object-fit: cover; /* Makes sure the video fills the section proportionally */
+  z-index: -1; /* Places the video behind the text */
+}
+
+/* Title styling (Static title) */
+.stargaze-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 56px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: white; /* Ensure visibility */
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  z-index: 1; /* Keeps title above the video */
+}
+
+/* Dynamic Picture Title styling */
+.stargaze-picture-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #262A41; /* Rouge color */
+  margin-bottom: 20px;
+  letter-spacing: 1px; /* Slightly increased spacing */
+  text-transform: capitalize;
+}
+
+/* Description styling */
+.stargaze-description {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  letter-spacing: 0.5px; /* Slightly increased spacing for readability */
+}
+
+/* Date and Copyright labels styling */
+.stargaze-date, .stargaze-copyright {
+  color: #262A41;
+  font-size: 1rem;
+  font-weight: bold; /* Bold labels */
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Right Section with Image as Background */
+.stargaze-right {
+  flex: 1; /* Takes up half of the container */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%; /* Full height of the container */
+}

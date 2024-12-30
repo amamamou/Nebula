@@ -11,6 +11,7 @@ import java.util.List;
 @RequestMapping("/api/moons")
 @CrossOrigin(origins = "http://localhost:4200")
 public class MoonRestController {
+
     private final MoonService moonService;
 
     public MoonRestController(MoonService moonService) {
@@ -29,16 +30,12 @@ public class MoonRestController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Moon> updateMoon(@PathVariable Long id, @RequestBody Moon updatedMoon) {
-        Moon moon = moonService.updateMoon(id, updatedMoon);
-        if (moon != null) {
-            return ResponseEntity.ok(moon);
-        }
-        return ResponseEntity.notFound().build(); // Return 404 if moon not found
+        return ResponseEntity.ok(moonService.updateMoon(id, updatedMoon));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteMoon(@PathVariable Long id) {
         moonService.deleteMoon(id);
-        return ResponseEntity.noContent().build(); // Return 204 No Content on successful deletion
+        return ResponseEntity.noContent().build();
     }
 }

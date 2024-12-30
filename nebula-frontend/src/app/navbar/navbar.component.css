@@ -26,6 +26,7 @@ body {
 
 /* Citély text */
 .navbar-logo .logo-text {
+
   font-family: 'Playfair Display', serif; /* Elegant serif font */
   font-size: 32px; /* Adjust size if needed */
   font-weight: bold;

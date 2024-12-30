@@ -16,6 +16,8 @@ import { AplanetsComponent } from './admin/aplanets/aplanets.component';
 import { AstronautComponent } from './admin/astronaut/astronaut.component';
 import { AhomeComponent } from './admin/ahome/ahome.component';
 import { AmoonComponent } from './admin/amoon/amoon.component';
+import { StargazeComponent } from './stargaze/stargaze.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,17 @@ import { AmoonComponent } from './admin/amoon/amoon.component';
     AstronautComponent,
     AhomeComponent,
     AmoonComponent,
+    StargazeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule  ,
-    FormsModule
+    FormsModule,
+    NgChartsModule,
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

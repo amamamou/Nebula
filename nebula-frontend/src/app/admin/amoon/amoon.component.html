@@ -22,10 +22,7 @@
           <option [ngValue]="false">No</option>
         </select>
       </div>
-      <div class="form-group">
-        <label for="planetId">Planet</label>
-        <input type="number" id="planetId" name="planetId" [(ngModel)]="newMoon.planetId" placeholder="Enter planet ID" required>
-      </div>
+  
       <button class="add-moon-btn" type="submit">
         <img src="assets/icons/{{ newMoon.id ? 'Update' : 'Add' }}.png" alt="{{ newMoon.id ? 'Update Moon' : 'Add Moon' }}" width="20" height="20">
         {{ newMoon.id ? 'Update Moon' : 'Add Moon' }}
@@ -44,7 +41,6 @@
         <th><span>Moon Name</span></th>
         <th><span>Diameter (km)</span></th>
         <th><span>Has Rings</span></th>
-        <th><span>Planet ID</span></th>
         <th><span>Actions</span></th>
       </tr>
     </thead>
@@ -54,7 +50,6 @@
         <td>{{ moon.name }}</td>
         <td>{{ moon.diameter }}</td>
         <td>{{ moon.hasRings ? 'Yes' : 'No' }}</td>
-        <td>{{ moon.planetId }}</td>
         <td>
           <!-- View button (Consult) -->
           <button class="action-btn" (click)="viewMoon(moon)">

@@ -1,6 +1,7 @@
 package com.example.nebula.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Moon {
@@ -9,18 +10,17 @@ public class Moon {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @Column(nullable = false)
     private String name;
 
+    @NotNull
     @Column(nullable = false)
-    private Double diameter;  // Diameter in kilometers
+    private Double diameter; // Diameter in kilometers
 
+    @NotNull
     @Column(nullable = false)
-    private Boolean hasRings;  // Whether the moon has rings
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "planet_id", nullable = false)
-    private Planet planet;  // The planet the moon orbits
+    private Boolean hasRings; // Whether the moon has rings
 
     // Getters and Setters
     public Long getId() {
@@ -53,13 +53,5 @@ public class Moon {
 
     public void setHasRings(Boolean hasRings) {
         this.hasRings = hasRings;
-    }
-
-    public Planet getPlanet() {
-        return planet;
-    }
-
-    public void setPlanet(Planet planet) {
-        this.planet = planet;
     }
 }

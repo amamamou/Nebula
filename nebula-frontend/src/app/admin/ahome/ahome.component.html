@@ -3,25 +3,32 @@
   <main class="main-content">
     <div class="greeting">
       <p class="greeting-text">Welcome to the Admin Dashboard for managing space data</p>
-      <img src="assets/logo.png" alt="Logo" class="logo">
+      <!-- <img src="assets/logo.png" alt="Logo" class="logo">-->
     </div>
 
     <div class="cards-container">
       <div class="card">
         <img src="assets/admin/1.jpg" alt="Planets" class="card-image">
         <h3>Planets</h3>
-        <a href="/planets" class="card-btn">View Planets</a> <!-- Updated to link to /planets -->
+        <p>{{ planetCount }} Planets</p> <!-- Display count of planets -->
       </div>
       <div class="card">
         <img src="assets/admin/2.jpg" alt="Astronauts" class="card-image">
         <h3>Astronauts</h3>
-        <a href="/moons" class="card-btn">View Astronauts</a> <!-- Updated to link to /moons -->
+        <p>{{ astronautCount }} Astronauts</p> <!-- Display count of astronauts -->
       </div>
       <div class="card">
-        <img src="assets/admin/3.jpg" alt="News" class="card-image">
-        <h3>Feedbacks</h3>
-        <button class="card-btn">View Feedbacks</button>
+        <img src="assets/admin/3.jpg" alt="Moons" class="card-image">
+        <h3>Moons</h3>
+        <p>{{ moonCount }} Moons</p> <!-- Display count of moons -->
       </div>
     </div>
+
+    <img src="assets/logo.png" alt="Logo" class="logo">
+
+    <!-- Copyright Notice -->
+    <footer class="footer">
+      <p>&copy; 2024 Nebula. All rights reserved.</p>
+    </footer>
   </main>
 </div>

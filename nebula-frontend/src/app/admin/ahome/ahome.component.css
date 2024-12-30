@@ -25,7 +25,8 @@
 
 /* Greeting Section */
 .greeting {
-  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 0px;
 }
 
 .greeting h1 {
@@ -42,18 +43,19 @@
   display: flex;
   gap: 30px;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  margin-top: 70px;
 }
 
 .card {
   background-color: #ffffff;
   border: 2px solid #000000;
   border-radius: 15px;
-  padding: 30px;
   width: 250px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height:290px;
 }
 
 .card:hover {
@@ -93,103 +95,6 @@
   outline: none;
 }
 
-/* Interactive Section */
-.interactive-section {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #f8f8f8;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.interactive-section h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #000000;
-  margin-bottom: 15px;
-}
-
-.interactive-section p {
-  font-size: 18px;
-  color: #555555;
-  margin-bottom: 20px;
-}
-
-.explore-btn {
-  background-color: #000000;
-  color: white;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
-}
-
-.explore-btn:hover {
-  background-color: #333333;
-}
-
-.explore-btn:focus {
-  outline: none;
-}
-
-/* Fun Animation Section */
-.fun-section {
-  margin-top: 40px;
-  padding: 20px;
-  background-color: #f1f1f1;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.fun-section h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: #000000;
-  margin-bottom: 15px;
-}
-
-.fun-section p {
-  font-size: 18px;
-  color: #555555;
-  margin-bottom: 20px;
-}
-
-.fun-btn {
-  background-color: #000000;
-  color: white;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.fun-btn:hover {
-  background-color: #333333;
-  transform: scale(1.1);
-}
-
-.fun-btn:focus {
-  outline: none;
-}
-
-/* Footer */
-.footer {
-  background-color: #000000;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  font-size: 14px;
-}
-a {
-  text-decoration: none;
-}
 
 /* Animations */
 @keyframes fadeIn {
@@ -205,9 +110,11 @@ a {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-top-left-radius: 10px;  /* Apply border radius to the top left */
+  border-top-right-radius: 10px; /* Apply border radius to the top right */
   margin-bottom: 20px;
 }
+
 /* Greeting Text and Logo Styling */
 .greeting {
   display: flex;
@@ -229,4 +136,20 @@ a {
 .logo {
   width: 100px; /* Adjust the size as needed */
   height: 100px;
+}
+.chart-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.chart-container canvas {
+  max-width: 100%;
+  height: auto;
+}
+/* Footer styling */
+.footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #808080;
 }
